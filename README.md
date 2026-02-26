@@ -80,7 +80,7 @@ This simulates how backend systems manage authentication and user sessions.
 ---
 
 ## 📂 Project Structure
-
+```text
 com.braindata.bankmanagement  
 │  
 ├── client  
@@ -95,7 +95,7 @@ com.braindata.bankmanagement
 │  
 └── serviceImpl  
     └── SBI.java  
-
+```
 ---
 
 ## 🛠️ Technologies Used
