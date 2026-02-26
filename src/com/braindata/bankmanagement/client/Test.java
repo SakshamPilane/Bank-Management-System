@@ -12,9 +12,13 @@ public class Test {
         Scanner input = new Scanner(System.in);
         SBI bank = new SBI();
 
+        System.out.println("=======================================");
+        System.out.println("      WELCOME TO SBI BANK SYSTEM      ");
+        System.out.println("=======================================");
+
         while (true) {
 
-            System.out.println("\n===== SBI BANK MENU =====");
+            System.out.println("\n--------------- MAIN MENU ---------------");
             System.out.println("1. Register");
             System.out.println("2. Login");
             System.out.println("3. Exit");
@@ -37,11 +41,12 @@ public class Test {
                     break;
 
                 case 3:
-                    System.out.println("Thank you for using SBI!");
+                    System.out.println("\nThank you for using SBI Bank!");
+                    System.out.println("=======================================");
                     System.exit(0);
 
                 default:
-                    System.out.println("Invalid choice!");
+                    System.out.println("Invalid choice! Please try again.");
             }
         }
     }
@@ -50,52 +55,52 @@ public class Test {
 
         input.nextLine();
 
-        System.out.println("\n--- Registration ---");
+        System.out.println("\n========== USER REGISTRATION ==========");
 
         Register register = new Register();
 
-        System.out.print("Enter Name: ");
+        System.out.print("Name: ");
         String name = input.nextLine();
 
-        System.out.print("Enter Username: ");
+        System.out.print("Username: ");
         String userName = input.next();
 
-        System.out.print("Enter Password: ");
+        System.out.print("Password: ");
         String password = input.next();
 
-        System.out.print("Enter Mobile Number: ");
+        System.out.print("Mobile Number: ");
         String number = input.next();
 
-        System.out.print("Enter Adhar Number: ");
+        System.out.print("Aadhar Number: ");
         String adhar = input.next();
 
-        System.out.print("Enter Gender: ");
+        System.out.print("Gender: ");
         String gender = input.next();
 
-        System.out.print("Enter Age: ");
+        System.out.print("Age: ");
         int age = input.nextInt();
 
         bank.registerUser(register, userName, password, name, number, adhar, gender, age);
 
-        System.out.println("Registration Successful!");
+        System.out.println("\nRegistration Successful ✅");
     }
 
     private static Register loginUser(Scanner input, SBI bank) {
 
-        System.out.println("\n--- Login ---");
+        System.out.println("\n============== LOGIN ==============");
 
-        System.out.print("Enter Username: ");
+        System.out.print("Username: ");
         String userName = input.next();
 
-        System.out.print("Enter Password: ");
+        System.out.print("Password: ");
         String password = input.next();
 
         Register user = bank.loginUser(userName, password);
 
         if (user == null) {
-            System.out.println("Invalid Credentials!");
+            System.out.println("Invalid Credentials ❌");
         } else {
-            System.out.println("Login Successful!");
+            System.out.println("Login Successful ✅");
         }
 
         return user;
@@ -105,12 +110,12 @@ public class Test {
 
         while (true) {
 
-            System.out.println("\n===== ACCOUNT MENU =====");
+            System.out.println("\n------------ ACCOUNT MENU ------------");
             System.out.println("1. Create Account");
-            System.out.println("2. Deposit");
-            System.out.println("3. Withdraw");
-            System.out.println("4. Balance Check");
-            System.out.println("5. Display All Details");
+            System.out.println("2. Deposit Money");
+            System.out.println("3. Withdraw Money");
+            System.out.println("4. Check Balance");
+            System.out.println("5. Display Profile");
             System.out.println("6. Logout");
             System.out.print("Enter choice: ");
 
@@ -145,11 +150,11 @@ public class Test {
                     break;
 
                 case 6:
-                    System.out.println("Logged Out Successfully!");
+                    System.out.println("Logged Out Successfully 👋");
                     return;
 
                 default:
-                    System.out.println("Invalid choice!");
+                    System.out.println("Invalid choice! Try again.");
             }
         }
     }
